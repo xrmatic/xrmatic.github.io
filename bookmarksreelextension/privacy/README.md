@@ -19,7 +19,7 @@ permalink: /privacy/
 
 "Bookmarks Reel" ("the extension", "we", "us") is an open-source Chrome extension published by its individual developer ("developer"). This policy describes how the extension handles information when you install and use it.
 
-Questions about this policy: [bookmarks-reel-privacy@example.com](mailto:bookmarks-reel-privacy@example.com). Replace this address with the contact email published in the Chrome Web Store listing.
+Questions about this policy: [bobchang711@gmail.com](mailto:bobchang711@gmail.com).
 
 ## 2. Scope
 
@@ -127,7 +127,7 @@ Material changes will be reflected by bumping the version shown in the header of
 
 ## 14. Contact
 
-Questions or privacy concerns: [bookmarks-reel-privacy@example.com](mailto:bookmarks-reel-privacy@example.com). The in-product link to this policy is available on the extension's Settings page.
+Questions or privacy concerns: [bobchang711@gmail.com](mailto:bobchang711@gmail.com). The in-product link to this policy is available on the extension's Settings page.
 
 ---
 
