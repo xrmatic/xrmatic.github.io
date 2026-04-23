@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Bookmarks Reel — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the Bookmarks Reel Chrome extension. No data leaves your device." />
+  <style>
+    :root {
+      --fg: #1f2328;
+      --muted: #57606a;
+      --accent: #0969da;
+      --bg: #ffffff;
+      --panel: #f6f8fa;
+      --border: #d0d7de;
+      --max-width: 760px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 32px 20px 64px;
+    }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    h1 { font-size: 28px; margin: 0 0 6px; }
+    h2 { font-size: 20px; margin: 32px 0 8px; }
+    h3 { font-size: 16px; margin: 20px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    p, li { margin: 8px 0; }
+    ul { padding-left: 22px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .callout {
+      background: var(--panel);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { display: block; margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--panel); font-weight: 600; }
+    a { color: var(--accent); }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #e6edf3;
+        --muted: #8b949e;
+        --accent: #58a6ff;
+        --bg: #0d1117;
+        --panel: #161b22;
+        --border: #30363d;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Bookmarks Reel — Privacy Policy</h1>
+    <p class="meta">Effective date: 22 April 2026 &middot; Version 1.1.0</p>
+  </header>
+
+  <div class="callout">
+    <strong>Summary</strong>
+    Bookmarks Reel is a Chrome extension that builds a local screenshot gallery of your bookmarks. Screenshots, bookmark metadata, and settings are stored only in your browser profile on your device. <strong>No data is sent to the developer or any third party.</strong> There is no analytics, telemetry, advertising, or tracking.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>"Bookmarks Reel" ("the extension", "we", "us") is an open-source Chrome extension published by its individual developer ("developer"). This policy describes how the extension handles information when you install and use it.</p>
+  <p>Questions about this policy: <a href="mailto:bookmarks-reel-privacy@example.com">bookmarks-reel-privacy@example.com</a>. Replace this address with the contact email published in the Chrome Web Store listing.</p>
+
+  <h2>2. Scope</h2>
+  <p>This policy covers the Bookmarks Reel Chrome extension. It does not cover any website you visit while using the extension, nor any third-party service a bookmarked page may load in its own right.</p>
+
+  <h2>3. What information the extension accesses</h2>
+  <p>The extension uses Chrome APIs to access the following information on your device, solely to provide the features described in Section 5.</p>
+  <table>
+    <thead>
+      <tr><th>Information</th><th>Source</th><th>Why it is accessed</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Your bookmark tree (titles, URLs, folder structure, date added, bookmark IDs)</td>
+        <td>Chrome <code>bookmarks</code> API</td>
+        <td>To know which pages to screenshot and to render the gallery.</td>
+      </tr>
+      <tr>
+        <td>Content of bookmarked pages, as rendered in your browser</td>
+        <td>A temporary capture window opened by the extension</td>
+        <td>To take a screenshot via <code>chrome.tabs.captureVisibleTab</code>.</td>
+      </tr>
+      <tr>
+        <td>URL and title of the active tab</td>
+        <td>Chrome <code>tabs</code> API</td>
+        <td>Only when the opt-in "visit capture" feature is enabled, to decide whether to screenshot the current page.</td>
+      </tr>
+      <tr>
+        <td>Per-page signals that indicate a login form (password input presence, autocomplete hints, form action, title keywords, common auth-framework DOM markers)</td>
+        <td>A read-only script injected via <code>chrome.scripting.executeScript</code></td>
+        <td>To skip capturing pages that appear to be sign-in screens.</td>
+      </tr>
+      <tr>
+        <td>Browser idle state</td>
+        <td>Chrome <code>idle</code> API</td>
+        <td>To hold scheduled captures until the browser is not in active use.</td>
+      </tr>
+      <tr>
+        <td>Display geometry (screen bounds)</td>
+        <td>Chrome <code>system.display</code> API</td>
+        <td>To position the capture window inside a visible screen.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Automatic screenshots may include authenticated content.</strong>
+    When the extension opens a bookmarked URL in its capture window, Chrome reuses your logged-in profile. That means automatic screenshots of a bookmarked page that you are signed in to may include content only visible when authenticated (for example, an inbox, an account page, or a dashboard). Section 6 describes the controls that limit this, and Section 8 describes how to turn each feature off.
+  </div>
+
+  <h2>4. What information the extension stores</h2>
+  <p>All of the following is stored <strong>only</strong> in Chrome's on-device extension storage (<code>chrome.storage.local</code>) in your current browser profile.</p>
+  <ul>
+    <li>Compressed JPEG screenshots of your bookmarked pages, keyed by bookmark ID.</li>
+    <li>A lightweight metadata index of saved screenshots (timestamps only) used to enforce storage caps efficiently.</li>
+    <li>Your extension settings: crawl interval, idle threshold, visit-capture interval, maximum images per bookmark, maximum image age, maximum total storage, login-page-skip toggle, excluded-capture-domains list, per-bookmark auto and visit toggles, popup layout preferences.</li>
+    <li>Bookkeeping used by scheduled captures: the cursor into your bookmark list, a pending-new-bookmark capture queue, and a flag indicating whether a scheduled crawl is waiting for the browser to become idle.</li>
+  </ul>
+
+  <h2>5. How the extension uses information</h2>
+  <p>Information described in Sections 3 and 4 is used solely to provide the extension's user-facing features:</p>
+  <ul>
+    <li>Render a searchable, sortable gallery of your bookmarks with their most recent screenshots.</li>
+    <li>Refresh those screenshots on a schedule you configure.</li>
+    <li>Capture a first screenshot when you add a new bookmark (while auto-crawl is enabled).</li>
+    <li>Optionally capture your active tab while you browse a bookmark's domain, when you have explicitly enabled that feature for that bookmark.</li>
+    <li>Skip capturing pages that match the login-page heuristic, when the "Skip login pages" setting is on (default: on).</li>
+    <li>Skip capturing any page whose domain matches your excluded-capture-domains list.</li>
+    <li>Prune old screenshots to stay within the storage cap you configure.</li>
+  </ul>
+  <p>The extension does not use any of this information to build user profiles, deliver advertising, or train models. It is never transmitted to the developer or to any third party.</p>
+
+  <h2>6. Safeguards for sensitive content</h2>
+  <ul>
+    <li><strong>Default sensitive-domain exclusion list.</strong> The extension ships with a preset list of domains (including major webmail, cloud storage, and banking services) whose automatic captures are skipped unless you remove them from the list.</li>
+    <li><strong>User-editable exclusion list.</strong> You can add any domain (and its subdomains are covered automatically) to the exclusion list on the Settings page.</li>
+    <li><strong>Login-page heuristic.</strong> Before capturing a page, the extension checks for visible password fields, autocomplete hints (<code>current-password</code>, <code>new-password</code>, <code>one-time-code</code>), login-related URL patterns and page titles, form actions referencing sign-in, and common auth-framework DOM markers. When any signal matches, the capture is skipped.</li>
+    <li><strong>Per-bookmark opt-outs.</strong> Every bookmark in the gallery has individual "Auto" and "Visit" toggles so you can disable capture for specific bookmarks without disabling the feature globally.</li>
+    <li><strong>Global pause.</strong> A single switch in the popup and Settings disables all automatic capture.</li>
+  </ul>
+  <p>These safeguards reduce the risk of capturing sensitive or authenticated content but cannot guarantee elimination of it. Please review the default exclusion list when you install the extension, and enable visit capture only on bookmarks where you are comfortable with periodic screenshots of pages you visit on that domain.</p>
+
+  <h2>7. Third parties, network requests, and transfers</h2>
+  <p>The extension does not transmit your screenshots, bookmarks, URLs, titles, settings, or any other data to the developer or any third party. There is no backend server operated by the developer.</p>
+  <p>The only outbound network requests the extension itself makes are:</p>
+  <ul>
+    <li><strong>To each bookmarked URL when it is time to screenshot that bookmark.</strong> This is the same request your browser would make if you opened the page yourself; it is sent directly to the site you bookmarked, not to the developer.</li>
+    <li><strong>To Google's public favicon service</strong> (<code>https://www.google.com/s2/favicons</code> via Chrome's built-in <code>_favicon</code> feature) to display the small site icons next to each card in the gallery. Only the bookmark's origin is included in this request. Google's use of that request is governed by Google's privacy policy.</li>
+  </ul>
+  <p>The extension does not sell your data, share it with third parties for their own purposes, or use it for any purpose unrelated to the extension's single purpose. No data is transferred internationally by the extension, because no data leaves your device.</p>
+
+  <h2>8. Your controls</h2>
+  <ul>
+    <li><strong>Pause auto-crawl</strong> globally from the popup or Settings.</li>
+    <li><strong>Disable Auto or Visit capture</strong> per bookmark from the gallery card.</li>
+    <li><strong>Edit the excluded-capture-domains list</strong> in Settings.</li>
+    <li><strong>Adjust the capture schedule, idle threshold, storage cap, and retention</strong> in Settings.</li>
+    <li><strong>Clear all saved screenshots</strong> with one click in Settings.</li>
+    <li><strong>Uninstall</strong> the extension from <code>chrome://extensions</code> — Chrome removes all of the extension's locally stored data when it is uninstalled.</li>
+  </ul>
+
+  <h2>9. Data retention</h2>
+  <p>Screenshots are retained locally until any of the following occurs:</p>
+  <ul>
+    <li>They exceed the per-bookmark image limit you configure (oldest is removed).</li>
+    <li>They exceed the maximum age you configure (default: 30 days); an hourly cleanup pass deletes older screenshots.</li>
+    <li>Total storage exceeds the cap you configure (default: 50 MB, maximum: 500 MB); the oldest 25% of screenshots are pruned.</li>
+    <li>You click "Clear All Screenshots" in Settings.</li>
+    <li>You uninstall the extension.</li>
+  </ul>
+
+  <h2>10. Security</h2>
+  <p>The extension follows Chrome Manifest V3 security defaults: no remote code is loaded, no <code>eval</code> is used, and the Content Security Policy is the MV3 default with only <code>'wasm-unsafe-eval'</code> relaxed so a bundled WebAssembly image-compression module can run. The <code>&lt;all_urls&gt;</code> host permission is declared as an optional host permission and is requested from you on demand, only when you first start a capture feature.</p>
+  <p>All data lives in Chrome's on-device extension storage, which is scoped to your browser profile.</p>
+
+  <h2>11. Children</h2>
+  <p>The extension is not directed at children under 13 and does not knowingly collect information from them. No information is collected by the developer from any user.</p>
+
+  <h2>12. Chrome Web Store Limited Use disclosure</h2>
+  <p>Bookmarks Reel's use of information received from Chrome APIs adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq/" rel="noopener noreferrer">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
+  <ul>
+    <li>Information read from Chrome APIs — bookmark tree, tab URL and title, page screenshots, idle state, and display geometry — is used solely to provide the user-facing features described above.</li>
+    <li>That information is stored only in local Chrome extension storage on the user's device.</li>
+    <li>That information is not transferred to the developer or any third party, is not sold, is not used for advertising, and is not used to train generalized machine-learning models.</li>
+  </ul>
+
+  <h2>13. Changes to this policy</h2>
+  <p>Material changes will be reflected by bumping the version shown in the header of this page and updating the effective date. The current version of this policy is bundled with the corresponding release of the extension, so installing or updating the extension gives you a copy of the policy in effect at that time.</p>
+
+  <h2>14. Contact</h2>
+  <p>Questions or privacy concerns: <a href="mailto:bookmarks-reel-privacy@example.com">bookmarks-reel-privacy@example.com</a>. The in-product link to this policy is available on the extension's Settings page.</p>
+
+  <footer>
+    Bookmarks Reel &middot; Privacy policy v1.1.0 &middot; Last updated 22 April 2026.
+  </footer>
+</main>
+</body>
+</html>
