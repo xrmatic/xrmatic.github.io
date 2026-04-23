@@ -2,7 +2,7 @@
 layout: default
 title: Bookmarks Reel — Privacy Policy
 description: Privacy policy for the Bookmarks Reel Chrome extension. No data leaves your device.
-permalink: /privacy/
+permalink: /privacy
 ---
 
 # Bookmarks Reel — Privacy Policy
