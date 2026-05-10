@@ -2,6 +2,8 @@
 
 [Bookmarks Reel](https://xrmatic.github.io/bookmarksreelextension)
 
+[Color Finder Plus](https://xrmatic.github.io/colorfinderplus)
+
 ---
 
 # ComfyUI Custom Nodes
